@@ -14,6 +14,13 @@ void main() {
         appBarTheme: const AppBarTheme(
           centerTitle: true,
         ),
+        cardTheme: const CardThemeData(
+          elevation: 3,
+          margin: EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+        ),
       ),
       home: const Expenses(),
     ),
