@@ -92,13 +92,9 @@ class _ExpensesState extends State<Expenses> {
                       Icon(
                         Icons.receipt_long,
                         size: 70,
-                        color: Theme.of(context)
-                            .colorScheme
-                            .primary,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
-
                       const SizedBox(height: 16),
-
                       const Text(
                         'No expenses yet',
                         style: TextStyle(
@@ -106,17 +102,13 @@ class _ExpensesState extends State<Expenses> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
                       const SizedBox(height: 8),
-
                       const Text(
                         'Start tracking your expenses '
                         'by adding your first expense.',
                         textAlign: TextAlign.center,
                       ),
-
                       const SizedBox(height: 20),
-
                       ElevatedButton.icon(
                         onPressed: _openAddExpense,
                         icon: const Icon(Icons.add),
@@ -159,7 +151,6 @@ class _ExpensesState extends State<Expenses> {
                       color: Colors.white,
                     ),
                   ),
-
                   child: Card(
                     child: ListTile(
                       contentPadding: const EdgeInsets.symmetric(
@@ -167,7 +158,15 @@ class _ExpensesState extends State<Expenses> {
                         vertical: 8,
                       ),
 
+                      // Final UI polish:
+                      // Category icon now follows the app theme.
                       leading: CircleAvatar(
+                        backgroundColor: Theme.of(context)
+                            .colorScheme
+                            .primaryContainer,
+                        foregroundColor: Theme.of(context)
+                            .colorScheme
+                            .onPrimaryContainer,
                         child: Icon(
                           _getCategoryIcon(
                             expense.category,
